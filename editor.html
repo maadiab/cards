@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Text to Image</title>
+  </head>
+  <body>
+    <img id="image" src="image.jpg" alt="Image" />
+    <canvas id="canvas" width="500" height="400"></canvas>
+
+    <script>
+      const image = document.getElementById('image');
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+
+      // Draw the image onto the canvas
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+      // Set the text style
+      ctx.font = '30px Arial';
+      ctx.fillStyle = 'black';
+      ctx.textAlign = 'center';
+
+      // Draw the text over the image
+      ctx.fillText('Hello, World!', canvas.width / 2, canvas.height / 2);
+    </script>
+  </body>
+</html>
